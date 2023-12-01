@@ -142,11 +142,13 @@ st.write('## Relationship between variables')
 
 st.write('#### Evolution of shap values of engine capacity based on mileage')
 st_shap(shap.dependence_plot("engV", shap_values.values, X_test, interaction_index= "mileage"), height=500)
+st.write("""We don't see here a clear pattern that suggest us any insight""")
+
+
 
 st.write('#### Evolution of shap values of car year based on mileage')
 st_shap(shap.dependence_plot("year", shap_values.values, X_test, interaction_index= "mileage"), height=500)
+st.write("""As expected newest cars tend to have lowest number of miles and this increase the car price. As those two variables tend to be highly correlated.""")
 
 
 
-st.write('hola')
-st_shap(shap.plots.force(shap_values))
